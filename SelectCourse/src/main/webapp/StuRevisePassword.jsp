@@ -41,7 +41,7 @@
 			</div>
 			<div class="right">
 				<div class="title">
-					在线选课
+					修改密码
 				</div>
 				<div class="username">
 				<!-- 右上角显示学生姓名功能  -->

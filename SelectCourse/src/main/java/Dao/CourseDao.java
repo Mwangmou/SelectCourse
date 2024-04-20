@@ -102,6 +102,27 @@ public class CourseDao {
 		   }
 		return re;
 	   }
+	   
+	 //修改 根据type找出其他学生信息
+		 public static CourseInfo getCourseType(String CourseType){
+			 CourseInfo news=null;
+			 Connection conn=null;
+			 String sql="select * from courseinfo where CourseType="+CourseType;
+			
+			 try {
+				 conn=DBHelper.getConn();
+				 ResultSet re = DBHelper.executeQuery(conn, sql);
+				while(re.next()){
+					 news=new CourseInfo(re.getInt(1),re.getString(2),re.getString(3),re.getString(4),re.getInt(5),re.getInt(6),re.getString(7),re.getString(8),re.getString(9));
+				 }
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+			}
+			 return news;
+		 }
+	   
+	   
 	   //修改 根据ID找出其他学生信息
 		 public static CourseInfo getNewsID(int id){
 			 CourseInfo news=null;
@@ -172,4 +193,25 @@ public class CourseDao {
 			}
 			return n;
 	}
+	    
+	    
+	    
+	    
+//	    public static List<CourseInfo> getCoursesType(String CourseType) {
+//	        List<CourseInfo> CourseTypeList = new ArrayList<>();
+//	        // 实现从数据库中根据课程类型获取课程的逻辑
+//	        // 将获取的课程添加到CourseTypeList列表中
+//	        return CourseTypeList;
+//	    }
+	
+//	        // Assuming you have a method to get courses by course type
+//	        public static List<CourseInfo> getCoursesType(String CourseType) {
+//	            List<CourseInfo> CourseType = new ArrayList<>();
+//	            // Implement the logic to fetch courses based on course type from the database
+//	            // Add the fetched courses to the filteredCourses list
+//	            return CourseType;
+//	        }
+	    
+	    
+	    
 }

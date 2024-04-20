@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>在线选课</title>
+<title>查看已选课程</title>
 <link rel="stylesheet" href="./css/StudentMainStyle.css">
 </head>
 <body>
@@ -37,7 +37,7 @@
 	</div>
 	<div class="right">
 		<div class="title">
-			在线选课
+			查看已选课程
 		</div>
 		<div class="username">
 			欢迎您，<%=stu.getName()%>同学
@@ -45,15 +45,7 @@
 		<a href="Login.jsp" class="off">退出登录</a>
 		<div class="main">
 			<div class="head">
-			<% String CourseType = request.getParameter("CourseType"); %> 
-				课程类型：<select name="CourseType">
 				
-					<form action="StudentMain1" method="post"><option value="1">网络选修课</option></form>
-					<form action="" method="post"><option value="2">公共选修课</option></form>
-					
-				</select>
-				<input type="text" class="Coursename" placeholder="课程名" />
-				<input type="button" value="搜索" />
 			</div>
 			<table class="detail" border="1" bordercolor=#ccc cellspacing="0">
 				<tr>
@@ -81,7 +73,7 @@
 					<td><%= course.getCourseType() %></td>
 					<td><%= course.getCourseTime() %></td>
 					<td><%= course.getCourseCondition() %></td>
-					<td><span class="buttonblue"><input type="button" value="选课" /></span></td>
+					<td><span class="buttonblue"><input type="button" value="取消" /></span></td>
 				</tr>
 				<%
 					}
